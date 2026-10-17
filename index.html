@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>For Faith ♡ A Little World Made With Love</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
@@ -132,6 +132,36 @@ input,select,textarea{font:inherit;padding:12px;border-radius:14px;border:1px so
 #dlg{position:fixed;inset:0;background:rgba(49,90,131,.4);z-index:150;display:none;align-items:center;justify-content:center;padding:18px}#dlg.on{display:flex}
 #cur{position:fixed;z-index:200;pointer-events:none;display:none;font-size:20px;transform:translate(-50%,-50%)}body.fine #cur{display:block}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv,.paper p,#fm p{opacity:1;transform:none}}
+/* ===== Phone polish ===== */
+html{-webkit-text-size-adjust:100%}
+*{-webkit-tap-highlight-color:transparent}
+#hero,#fin{min-height:100vh;min-height:100svh}
+main{padding-bottom:90px}
+#intro{overflow-y:auto}
+#intro .hand{font-size:clamp(1.5rem,6.5vw,2rem)!important}
+.fi{-webkit-transform-style:preserve-3d}
+.fc{cursor:pointer;-webkit-user-select:none;user-select:none}
+#mus{right:calc(14px + env(safe-area-inset-right));bottom:calc(14px + env(safe-area-inset-bottom))}
+#hbtn{left:calc(14px + env(safe-area-inset-left));bottom:calc(14px + env(safe-area-inset-bottom))}
+@media(hover:none){.btn:hover,.chip:hover{transform:none}}
+@media(max-width:600px){
+body{font-size:16px}
+section{padding:56px 16px}
+.glass{padding:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.grid{grid-template-columns:repeat(2,1fr);gap:12px}
+.fc{height:210px}
+.fc .f,.fc .k{padding:12px;font-size:.92rem}
+.fc .f{font-size:1rem}.fc .f b{font-size:2rem}
+.paper{font-size:1.3rem;padding:24px 18px}
+.tl{padding-left:36px}.tl:before{left:11px}.tl .it:before{left:-34px}
+#hero{padding:70px 16px 40px}
+.ribbon{font-size:1.3rem;padding:6px 22px}
+.rb{width:42px;height:42px}
+#pct{font-size:2rem}
+#mcard.crash #mmsg,#mcard.dead #mmsg{font-size:.9rem}
+#ly{font-size:1.5rem}
+.row input[type=range]{min-width:90px}
+}
 </style></head><body>
 <div id="bar"></div><div id="clouds" aria-hidden="true"></div><div id="cur" aria-hidden="true">🩵</div><div id="hint" role="status">Tap anywhere to start the music 🎵</div>
 <div id="tick" class="go" aria-live="polite"><div id="tk"><span>Faith, you are so loved ♡&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>My favorite person, always ♡&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>Little moments with you are magic ✨&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>Faith, you are so loved ♡&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>My favorite person, always ♡&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>Little moments with you are magic ✨</span></div></div>
@@ -278,7 +308,7 @@ const paper=$("#paper");LETTER.forEach((t,i)=>{const p=el("p","",t);if(i==LETTER
 function playLetter(){const ps=$$("#paper p");ps.forEach(p=>p.classList.remove("show"));ps.forEach((p,i)=>setTimeout(()=>p.classList.add("show"),RM?0:600+i*1400))}
 let lettered=false;new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){playLetter();o.disconnect()}},{threshold:.2}).observe(paper);
 $("#reread").onclick=playLetter;
-THINGS.forEach(([e,t,m])=>{const b=el("button","fc rv");b.setAttribute("aria-label",t+": tap to flip");b.innerHTML='<div class="fi"><div class="f"><b></b><span></span></div><div class="k"></div></div>';b.querySelector("b").textContent=e;b.querySelector("span").textContent=t;b.querySelector(".k").textContent=m;b.onclick=()=>b.classList.toggle("on");$("#things").append(b)});
+THINGS.forEach(([e,t,m])=>{const b=el("div","fc rv");b.setAttribute("role","button");b.tabIndex=0;b.setAttribute("aria-label",t+": tap to flip");b.innerHTML='<div class="fi"><div class="f"><b></b><span></span></div><div class="k"></div></div>';b.querySelector("b").textContent=e;b.querySelector("span").textContent=t;b.querySelector(".k").textContent=m;const fl=()=>b.classList.toggle("on");b.onclick=fl;b.onkeydown=ev=>{if(ev.key=="Enter"||ev.key==" "){ev.preventDefault();fl()}};$("#things").append(b)});
 TIMELINE.forEach(([t,m])=>{const d=el("div","it glass rv");d.append(el("h3","",t),el("p","",m));$("#tl").append(d)});
 addEventListener("keydown",e=>{if(e.key=="Escape")$("#dlg").classList.remove("on")});
 /* cute words */
