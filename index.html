@@ -131,40 +131,82 @@ input,select,textarea{font:inherit;padding:12px;border-radius:14px;border:1px so
 #cc{left:14px;bottom:76px;max-width:220px;background:#fff;border-radius:18px;padding:8px 12px;font-size:.9rem;box-shadow:var(--sh);opacity:0;transition:opacity .6s;pointer-events:none}#cc.on{opacity:1}
 #dlg{position:fixed;inset:0;background:rgba(49,90,131,.4);z-index:150;display:none;align-items:center;justify-content:center;padding:18px}#dlg.on{display:flex}
 #cur{position:fixed;z-index:200;pointer-events:none;display:none;font-size:20px;transform:translate(-50%,-50%)}body.fine #cur{display:block}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv,.paper p,#fm p{opacity:1;transform:none}}
-/* ===== Phone polish ===== */
+/* ===== Phone-first design (desktop upgrades at the bottom) ===== */
 html{-webkit-text-size-adjust:100%}
 *{-webkit-tap-highlight-color:transparent}
+body{font-size:15.5px;line-height:1.65}
+section{padding:52px 16px}
+section h2{font-size:clamp(1.45rem,6.6vw,2rem);margin-bottom:20px}
+section>p.hand{font-size:1.3rem!important}
+.glass{padding:18px;border-radius:18px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.btn{padding:13px 22px;font-size:.95rem}
+main{padding-bottom:84px}
+#intro{overflow-y:auto;gap:12px}
+#intro .hand{font-size:clamp(1.35rem,6vw,1.8rem)!important}
+#intro p.s{font-size:1rem}
+#env{scale:.9}
 #hero,#fin{min-height:100vh;min-height:100svh}
-main{padding-bottom:90px}
-#intro{overflow-y:auto}
-#intro .hand{font-size:clamp(1.5rem,6.5vw,2rem)!important}
+#hero{padding:64px 16px 36px;gap:14px}
+#hero h1{font-size:clamp(2rem,10.5vw,3rem)!important}
+#hero .hand{font-size:1.25rem!important}
+#hero h2{font-size:clamp(1.25rem,5.6vw,1.8rem);margin:0}
+.heart{width:84px}
+.ribbon{font-size:1.2rem;padding:5px 22px}
+#tick{height:32px}body.in main{padding-top:32px}#tk{font-size:1.1rem}
+.cl{opacity:.8}
+.cl:nth-child(odd){animation-duration:40s!important}
+.cl:nth-child(even){animation-duration:56s!important}
+.paper{font-size:1.28rem;line-height:32px;background:repeating-linear-gradient(transparent 0 31px,#d5e8f8 31px 32px),#fffdfb;padding:32px 18px 4px 22px;border-left:3px solid var(--pink);border-radius:14px;transform:none}
+.paper p{margin:0 0 32px;overflow-wrap:break-word}
+.grid{grid-template-columns:repeat(2,1fr);gap:10px}
+.fc{height:178px;cursor:pointer;-webkit-user-select:none;user-select:none}
 .fi{-webkit-transform-style:preserve-3d}
-.fc{cursor:pointer;-webkit-user-select:none;user-select:none}
+.fc .f,.fc .k{padding:10px;font-size:.86rem;line-height:1.4;border-radius:16px}
+.fc .f{font-size:.95rem}.fc .f b{font-size:1.9rem}
+.tl{padding-left:34px}.tl:before{left:10px}
+.tl .it{margin-bottom:14px}
+.tl .it:before{left:-32px;top:12px;width:26px;height:26px;font-size:.8rem}
+.tl .it h3{font-size:1.05rem}.tl .it p{font-size:.93rem}
+.chip{font-size:1.1rem;padding:8px 14px}
+#cw{font-size:1.45rem!important}
+.ow button{padding:14px 16px;font-size:1rem}
+.ow div{padding:0 16px}.ow.on div{padding:0 16px 16px}
+#pct{font-size:1.9rem}#mmsg{font-size:.95rem}#msub{font-size:1.05rem}
+#mcard.crash #mmsg,#mcard.dead #mmsg{font-size:.85rem}
+.pr li{margin:8px 0 8px 18px}.pr .hand{font-size:1.5rem!important}
+.vin{width:104px;height:104px}
+.row{gap:8px}.row input[type=range]{min-width:80px}
+#ly{font-size:1.45rem;min-height:78px}
+#fin h2{font-size:clamp(1.4rem,6vw,1.9rem)}
+#fm{font-size:1.02rem}#sig{font-size:1.5rem!important}
+.hb{font-size:2.4rem}
+.rb{width:40px;height:40px;font-size:17px}
+#top{width:52px;height:34px;bottom:64px}
+#cc{max-width:190px;font-size:.82rem;bottom:64px}
 #mus{right:calc(14px + env(safe-area-inset-right));bottom:calc(14px + env(safe-area-inset-bottom))}
 #hbtn{left:calc(14px + env(safe-area-inset-left));bottom:calc(14px + env(safe-area-inset-bottom))}
 @media(hover:none){.btn:hover,.chip:hover{transform:none}}
-@media(max-width:600px){
-body{font-size:16px}
-section{padding:56px 16px}
-.glass{padding:20px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
-.grid{grid-template-columns:repeat(2,1fr);gap:12px}
-.fc{height:210px}
-.fc .f,.fc .k{padding:12px;font-size:.92rem}
-.fc .f{font-size:1rem}.fc .f b{font-size:2rem}
-.paper{font-size:1.3rem;padding:24px 18px}
-.tl{padding-left:36px}.tl:before{left:11px}.tl .it:before{left:-34px}
-#hero{padding:70px 16px 40px}
-.ribbon{font-size:1.3rem;padding:6px 22px}
-.rb{width:42px;height:42px}
-#pct{font-size:2rem}
-#mcard.crash #mmsg,#mcard.dead #mmsg{font-size:.9rem}
-#ly{font-size:1.5rem}
-.row input[type=range]{min-width:90px}
+@media(min-width:700px){
+ body{font-size:17px}
+ section{padding:80px 18px}
+ section h2{font-size:clamp(1.9rem,4vw,2.5rem);margin-bottom:28px}
+ section>p.hand{font-size:1.8rem!important}
+ .glass{padding:26px;border-radius:22px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+ .btn{padding:14px 26px;font-size:1rem}
+ #hero h1{font-size:clamp(2.4rem,9vw,4rem)!important}
+ #hero .hand{font-size:1.6rem!important}
+ #hero h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+ .heart{width:110px}
+ .grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px}
+ .fc{height:200px}
+ .fc .f,.fc .k{padding:16px;font-size:.98rem}
+ .paper{font-size:1.45rem;line-height:34px;background:repeating-linear-gradient(transparent 0 33px,#d5e8f8 33px 34px),#fffdfb;padding:34px 30px 4px 32px}
+ .paper p{margin-bottom:34px}
+ #tick{height:34px}body.in main{padding-top:34px}#tk{font-size:1.25rem}
 }
 </style></head><body>
 <div id="bar"></div><div id="clouds" aria-hidden="true"></div><div id="cur" aria-hidden="true">🩵</div><div id="hint" role="status">Tap anywhere to start the music 🎵</div>
-<div id="tick" class="go" aria-live="polite"><div id="tk"><span>Faith, you are so loved ♡&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>My favorite person, always ♡&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>Little moments with you are magic ✨&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>Faith, you are so loved ♡&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>My favorite person, always ♡&nbsp;&nbsp;•&nbsp;&nbsp;</span><span>Little moments with you are magic ✨</span></div></div>
+<div id="tick" class="go" aria-live="polite"><div id="tk"></div></div>
 
 <div id="intro">
  <p class="hand" style="font-size:2rem;max-width:480px">Psst… Faith, this little corner of the internet belongs to you. 💌</p>
@@ -291,7 +333,7 @@ const FINAL=[
 /* ============ END EDIT ME ============ */
 
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)],au=$("#au");
-const RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const RM=false; /* motion always on. To honor a phone's "reduce motion" setting, use: matchMedia("(prefers-reduced-motion:reduce)").matches */
 function el(t,c,x){const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
 /* hearts & clouds */
 for(let i=0;i<6;i++){const c=el("div","cl");c.style.cssText=`top:${5+i*14}%;animation-duration:${60+i*15}s;animation-delay:-${i*17}s;scale:${.7+i%3*.3}`;$("#clouds").append(c)}
@@ -306,7 +348,7 @@ const rv=()=>$$(".rv").forEach(x=>io.observe(x));
 /* build */
 const paper=$("#paper");LETTER.forEach((t,i)=>{const p=el("p","",t);if(i==LETTER.length-1)p.classList.add("hand");paper.append(p)});
 function playLetter(){const ps=$$("#paper p");ps.forEach(p=>p.classList.remove("show"));ps.forEach((p,i)=>setTimeout(()=>p.classList.add("show"),RM?0:600+i*1400))}
-let lettered=false;new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){playLetter();o.disconnect()}},{threshold:.2}).observe(paper);
+let lettered=false;new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){playLetter();o.disconnect()}},{threshold:0,rootMargin:"0px 0px -12% 0px"}).observe(paper);
 $("#reread").onclick=playLetter;
 THINGS.forEach(([e,t,m])=>{const b=el("div","fc rv");b.setAttribute("role","button");b.tabIndex=0;b.setAttribute("aria-label",t+": tap to flip");b.innerHTML='<div class="fi"><div class="f"><b></b><span></span></div><div class="k"></div></div>';b.querySelector("b").textContent=e;b.querySelector("span").textContent=t;b.querySelector(".k").textContent=m;const fl=()=>b.classList.toggle("on");b.onclick=fl;b.onkeydown=ev=>{if(ev.key=="Enter"||ev.key==" "){ev.preventDefault();fl()}};$("#things").append(b)});
 TIMELINE.forEach(([t,m])=>{const d=el("div","it glass rv");d.append(el("h3","",t),el("p","",m));$("#tl").append(d)});
